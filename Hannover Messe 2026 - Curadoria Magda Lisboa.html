@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannover Messe 2026 — Curadoria Magda Lisboa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f4f6f9;color:#1a1a2e;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+.hero{background:linear-gradient(135deg,#0d1b2a 0%,#1a237e 55%,#01579b 100%);color:#fff;padding:60px 24px 48px;text-align:center}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:6px 18px;font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:20px;color:#90caf9}
+.hero h1{font-size:clamp(26px,5vw,50px);font-weight:800;line-height:1.15;margin-bottom:12px}
+.hero h1 span{color:#ff6f00}
+.hero p{font-size:18px;color:rgba(255,255,255,.75);max-width:640px;margin:0 auto 28px}
+.hero-meta{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.hero-meta-item{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,.7)}
+.hero-meta-item strong{color:#fff}
+
+.themes{padding:48px 24px;background:#f4f6f9}
+.themes-inner{max-width:1100px;margin:0 auto}
+.themes h2{text-align:center;font-size:22px;font-weight:700;margin-bottom:32px}
+.themes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.theme-card{background:#fff;border-radius:16px;padding:28px;border:1px solid #e2e8f0;border-top:4px solid var(--tc)}
+.theme-card h3{font-size:17px;font-weight:700;margin-bottom:10px;color:var(--tc)}
+.theme-card p{font-size:14px;color:#555;margin-bottom:14px}
+.theme-stat{background:#f8fafc;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:600;color:#333;border-left:3px solid var(--tc)}
+
+.main{max-width:1100px;margin:0 auto;padding:40px 24px}
+.search-bar{background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:14px 18px;font-size:15px;width:100%;margin-bottom:28px;font-family:inherit;transition:border-color .2s;outline:none}
+.search-bar:focus{border-color:#1a237e}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tab{background:#fff;border:2px solid #e2e8f0;border-radius:100px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;color:#555;white-space:nowrap}
+.tab:hover{border-color:#1a237e;color:#1a237e}
+.tab.active{background:var(--tab-color,#1a237e);border-color:var(--tab-color,#1a237e);color:#fff}
+.tab .count{background:rgba(255,255,255,.3);border-radius:100px;padding:1px 7px;font-size:11px;margin-left:4px}
+.tab:not(.active) .count{background:#f0f0f0;color:#888}
+
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:#fff;border-radius:14px;padding:22px;border:1px solid #e2e8f0;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px)}
+.card-tag{display:inline-block;border-radius:100px;padding:3px 12px;font-size:11px;font-weight:700;letter-spacing:.3px;margin-bottom:12px;text-transform:uppercase}
+.card h3{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4}
+.card p{font-size:13px;color:#666;flex:1;line-height:1.55}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;font-weight:600;color:#1a237e;transition:gap .15s}
+.card-link:hover{gap:10px}
+.card-link svg{flex-shrink:0}
+
+.tag-oficial{background:#e8f0fe;color:#1a56db}
+.tag-youtube{background:#fde8e8;color:#c81e1e}
+.tag-bigtech{background:#ede9fe;color:#5b21b6}
+.tag-ia{background:#e0e7ff;color:#3730a3}
+.tag-robotica{background:#fff7ed;color:#b45309}
+.tag-energia{background:#ecfdf5;color:#047857}
+.tag-brasil{background:#e0f2fe;color:#0369a1}
+.tag-analise{background:#f1f5f9;color:#475569}
+.tag-ferramentas{background:#f0fdf4;color:#166534}
+.tag-sebrae{background:#e8fdf0;color:#057a55}
+.tag-portal{background:#e0f2fe;color:#0e7490}
+.tag-destaque{background:#fff8e1;color:#92400e}
+
+.card.featured{border:2px solid #f59e0b;background:linear-gradient(135deg,#fffdf0 0%,#fff 70%);grid-column:1/-1;position:relative}
+.card.featured::after{content:'★ BRASIL · PAÍS PARCEIRO OFICIAL';position:absolute;top:14px;right:16px;background:#f59e0b;color:#fff;font-size:10px;font-weight:800;letter-spacing:.8px;padding:4px 12px;border-radius:100px}
+.card.featured h3{font-size:17px;color:#0369a1}
+
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.tool-card{background:#fff;border-radius:12px;padding:18px;border:1px solid #e2e8f0;display:flex;align-items:flex-start;gap:14px;transition:box-shadow .2s}
+.tool-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.07)}
+.tool-icon{width:40px;height:40px;border-radius:10px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.tool-info h3{font-size:14px;font-weight:700;margin-bottom:3px}
+.tool-info p{font-size:12px;color:#666;margin-bottom:6px}
+.tool-cost{font-size:11px;font-weight:700;padding:2px 10px;border-radius:100px;background:#f0f9ff;color:#0369a1;display:inline-block}
+.tool-cost.free{background:#f0fdf4;color:#166534}
+.tool-link{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:12px;font-weight:600;color:#1a237e}
+
+.no-results{text-align:center;padding:60px 24px;color:#999}
+.no-results p{font-size:16px}
+
+footer{background:#0d1b2a;color:rgba(255,255,255,.6);text-align:center;padding:32px 24px;margin-top:60px}
+footer strong{color:#fff}
+
+@media(max-width:600px){
+  .hero{padding:40px 16px 36px}
+  .main{padding:24px 16px}
+  .hero-meta{gap:16px}
+  .card.featured::after{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-badge">20–24 ABR 2026 · HANNOVER, ALEMANHA · 79ª EDIÇÃO</div>
+  <h1>Hannover Messe 2026: <span>Think Tech Forward</span></h1>
+  <p>Curadoria de fontes, tendências e oportunidades para o setor metalmecânico brasileiro</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">🏭 <strong>130.000+</strong> profissionais</div>
+    <div class="hero-meta-item">🌍 <strong>4.000</strong> expositores · 150+ países</div>
+    <div class="hero-meta-item">🇧🇷 Brasil: <strong>País Parceiro Oficial</strong></div>
+    <div class="hero-meta-item">💡 Tema: <strong>"Think Tech Forward"</strong></div>
+  </div>
+</header>
+
+<section class="themes">
+  <div class="themes-inner">
+    <h2>Os 3 Grandes Temas da Hannover Messe 2026</h2>
+    <div class="themes-grid">
+      <div class="theme-card" style="--tc:#1565c0">
+        <h3>🤖 IA Industrial e Dados</h3>
+        <p>A IA deixou de ser laboratório e virou chão de fábrica. Digital twins, agentes autônomos e ERP com linguagem natural — quem integra IA nas operações decide com vantagem e produz com eficiência.</p>
+        <div class="theme-stat">Schneider Electric reduziu 50% do tempo de engenharia com IA agêntica — HM 2026</div>
+      </div>
+      <div class="theme-card" style="--tc:#bf360c">
+        <h3>🦾 Robótica, Humanoides e a Fábrica do Futuro</h3>
+        <p>15 empresas apresentaram robôs humanoides prontos para produção. A fábrica que combina equipamento físico com inteligência embarcada produz mais, erra menos e aprende sozinha.</p>
+        <div class="theme-stat">NEURA Robotics: humanoide 4NE1 a partir de €60.000 — do lab para o chão de fábrica</div>
+      </div>
+      <div class="theme-card" style="--tc:#2e7d32">
+        <h3>🌎 Brasil e Europa: A Janela de Oportunidades</h3>
+        <p>Brasil foi o País Parceiro Oficial. O acordo Mercosul-UE cria o maior bloco comercial da história. Hidrogênio verde, biocombustíveis e indústria limpa: o Brasil tem o que o mundo precisa.</p>
+        <div class="theme-stat">"Mercosul-UE: mercado de 720 milhões de pessoas e US$ 22 trilhões em PIB" — Chanceler Merz, HM 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+  <input class="search-bar" type="text" id="searchInput" placeholder="🔍  Buscar em todas as fontes..." oninput="filterAll()">
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" style="--tab-color:#1a237e" onclick="showSection('all',this)">Todas <span class="count" id="count-all">59</span></button>
+    <button class="tab" style="--tab-color:#1a56db" onclick="showSection('oficial',this)">HM Oficial <span class="count" id="count-oficial">7</span></button>
+    <button class="tab" style="--tab-color:#c81e1e" onclick="showSection('youtube',this)">YouTube <span class="count" id="count-youtube">6</span></button>
+    <button class="tab" style="--tab-color:#0369a1" onclick="showSection('brasil',this)">Brasil na Feira <span class="count" id="count-brasil">11</span></button>
+    <button class="tab" style="--tab-color:#057a55" onclick="showSection('sebrae',this)">Sebrae & Instituições <span class="count" id="count-sebrae">6</span></button>
+    <button class="tab" style="--tab-color:#5b21b6" onclick="showSection('bigtech',this)">Big Tech <span class="count" id="count-bigtech">6</span></button>
+    <button class="tab" style="--tab-color:#3730a3" onclick="showSection('ia',this)">IA Industrial <span class="count" id="count-ia">4</span></button>
+    <button class="tab" style="--tab-color:#b45309" onclick="showSection('robotica',this)">Robótica <span class="count" id="count-robotica">6</span></button>
+    <button class="tab" style="--tab-color:#047857" onclick="showSection('energia',this)">Energia & H₂ <span class="count" id="count-energia">3</span></button>
+    <button class="tab" style="--tab-color:#475569" onclick="showSection('analise',this)">Análise <span class="count" id="count-analise">3</span></button>
+    <button class="tab" style="--tab-color:#0e7490" onclick="showSection('portais-br',this)">Portais BR <span class="count" id="count-portais-br">5</span></button>
+    <button class="tab" style="--tab-color:#166534" onclick="showSection('ferramentas',this)">Ferramentas <span class="count" id="count-ferramentas">10</span></button>
+  </div>
+
+  <div id="cards-container"></div>
+  <div class="no-results" id="no-results" style="display:none"><p>Nenhuma fonte encontrada para essa busca.</p></div>
+</main>
+
+<footer>
+  <p>Curadoria: <strong>MAGDA LISBOA</strong> · Hannover Messe 2026 — Think Tech Forward</p>
+  <p style="margin-top:8px;font-size:12px">Projeto Transforma Médio Paraíba | SEBRAE/RJ · ATTIVA ESTRATÉGIA · Fontes verificadas em maio de 2026</p>
+</footer>
+
+<script>
+const SOURCES = [
+
+  // HANNOVER MESSE OFICIAL (7)
+  {id:1,section:'oficial',tag:'tag-oficial',tagLabel:'HM Oficial',title:'HANNOVER MESSE 2026 — Site Oficial',desc:'Página central da edição 2026 com tema "Think Tech Forward" e acesso às 3 hubs: Automação & Digitalização, Energia & Infraestrutura Industrial, Pesquisa & Transferência Tecnológica.',url:'https://www.hannovermesse.de/en/hannover-messe-2026/'},
+  {id:2,section:'oficial',tag:'tag-oficial',tagLabel:'HM Oficial',title:'Press Release: IA Industrial como Diferencial Competitivo (Deutsche Messe AG)',desc:'Comunicado oficial: mais de 3.000 expositores demonstram como IA industrial, robótica, automação e digitalização geram vantagens competitivas mensuráveis na manufatura.',url:'https://www.messe.de/en/newsroom/press-releases/deutsche-messe-ag/press-release_10112'},
+  {id:3,section:'oficial',tag:'tag-oficial',tagLabel:'HM Oficial',title:'Schaeffler vence o HERMES AWARD 2026 — O Maior Prêmio Industrial do Mundo',desc:'Schaeffler conquista o prêmio máximo de inovação industrial com plataforma de atuadores integrados para robótica humanoide. Entregue em 19/04/2026 pela Ministra Federal de Pesquisa da Alemanha.',url:'https://www.hannovermesse.de/en/press/press-releases/hannover-messe/schaeffler-wins-the-2026-hermes-award'},
+  {id:4,section:'oficial',tag:'tag-oficial',tagLabel:'HM Oficial',title:'Tema Oficial: Robótica e Automação de Montagem',desc:'Página dedicada ao tema robótica da edição 2026, com destaques dos expositores e as tecnologias que estão redefinindo o chão de fábrica — de braços industriais a humanoides.',url:'https://www.hannovermesse.de/en/topics/robotics-assembly-automation/'},
+  {id:5,section:'oficial',tag:'tag-oficial',tagLabel:'HM Oficial',title:'Tema Oficial: IA Industrial',desc:'Página oficial do tema "IA Industrial" com aplicações, casos de uso e empresas expositoras — o tema mais presente em toda a edição 2026.',url:'https://www.hannovermesse.de/en/topics/industrial-ai/'},
+  {id:6,section:'oficial',tag:'tag-oficial',tagLabel:'HM Oficial',title:'Tema Oficial: Tecnologia de Produção para Defesa',desc:'Novo formato no Hall 26, em parceria com a DSEI Germany: tecnologias de produção para defesa — sinaliza diversificação e novos mercados para a indústria metalmecânica europeia.',url:'https://www.hannovermesse.de/en/topics/production-technology-for-defense/'},
+  {id:8,section:'oficial',tag:'tag-oficial',tagLabel:'HM Oficial',title:'Conferência: Da IA Física aos Robôs Humanoides em Produção',desc:'Sessão oficial da feira: como passar de IA física para robôs humanoides com aplicações reais e autônomas no chão de fábrica industrial. Com Agile Robots, NEURA Robotics e parceiros.',url:'https://www.hannovermesse.de/event/from-physical-ai-to-humanoid-robots-bringing-industrial-autonomy-to-life/pan/92704'},
+
+  // BRASIL NA FEIRA (5)
+  {id:7,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Brasil como País Parceiro Oficial da Hannover Messe 2026',desc:'6 pavilhões brasileiros, 140+ expositores, 800+ executivos. Foco em hidrogênio verde, biocombustíveis e transformação industrial. O maior destaque brasileiro em toda a história da Hannover Messe.',url:'https://www.hannovermesse.de/en/expo/partner-country/index-3',featured:true},
+  {id:34,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Lula abre a Hannover Messe com 10 Acordos Brasil-Alemanha',desc:'Presidente Lula inaugura a 79ª edição e assina 10 acordos bilaterais: defesa, economia, digitalização, ciência, meio ambiente e comércio justo — agenda histórica para a indústria.',url:'https://www.riotimesonline.com/lula-hannover-messe-merz-biofuels-brazil-agreements/'},
+  {id:35,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Merz anuncia: Acordo Mercosul-UE entra em vigor em 1º de maio',desc:'O chanceler alemão anuncia na abertura que o Mercosul-UE cria mercado de 720 milhões de pessoas e US$ 22 trilhões em PIB — o maior acordo comercial bilateral da história.',url:'https://www.bundesregierung.de/breg-en/news/merz-hannover-messe-2422236'},
+  {id:36,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Lula na Hannover Messe: Parceria Estratégica Brasil-Alemanha (Planalto)',desc:'Nota oficial: abertura da feira, Encontro Econômico Brasil-Alemanha, reunião bilateral com Merz, inauguração do pavilhão brasileiro. Foco em transição energética e inovação industrial.',url:'https://www.gov.br/planalto/en/latest-news/2026/04/lula-attends-hannover-fair-and-reinforces-strategic-partnership-between-brazil-and-germany-with-agenda-focused-on-industry-and-energy-transition'},
+  {id:37,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Além do Agronegócio: Brasil como Potência Industrial Global',desc:'ApexBrasil lidera delegação com Embraer, Vale, Petrobras, BNDES, ABIMAQ e startups. Brasil se posiciona pela primeira vez como potência industrial — não apenas agrícola.',url:'https://emag.directindustry.com/2026/03/06/brazil-global-industrial-power-hannover-messe-2026-apex-trade/'},
+
+  // YOUTUBE (6)
+  {id:9,section:'youtube',tag:'tag-youtube',tagLabel:'YouTube',title:'HANNOVER MESSE — Canal Oficial no YouTube',desc:'Canal oficial da Deutsche Messe AG: livestreams da cerimônia de abertura, keynotes do Center Stage, cobertura de expositores e conteúdo sob demanda da edição 2026.',url:'https://www.youtube.com/channel/UCbNMIF3xUCQv-9uvjut6Adw'},
+  {id:10,section:'youtube',tag:'tag-youtube',tagLabel:'YouTube',title:'HANNOVER MESSE 2026 — Playlist Completa (Oficial)',desc:'Playlist oficial com todos os vídeos da edição 2026: expositores, inovações, entrevistas, keynotes e cobertura completa do evento.',url:'https://www.youtube.com/playlist?list=PLrev4FFDafXFiEuF4LL-cPas9qfjddM84'},
+  {id:11,section:'youtube',tag:'tag-youtube',tagLabel:'YouTube',title:'HANNOVER MESSE 2026 — Imagefilm Oficial',desc:'Filme institucional oficial apresentando o tema "Think Tech Forward" e os grandes destaques da edição 2026. Ponto de entrada visual ideal para entender o espírito do evento.',url:'https://www.youtube.com/watch?v=819e_PyzvsQ'},
+  {id:12,section:'youtube',tag:'tag-youtube',tagLabel:'YouTube',title:'O Próximo Capítulo da Manufatura Global (HM Oficial)',desc:'Vídeo apresentando a Hannover Messe 2026 como o próximo capítulo da manufatura global, com IA e robótica no centro da transformação industrial.',url:'https://www.youtube.com/watch?v=_mPhEi0u3tw'},
+  {id:13,section:'youtube',tag:'tag-youtube',tagLabel:'YouTube',title:'Press Preview: Deutsche Messe Revela os Temas da HM 2026',desc:'Cobertura do Press Preview de fevereiro 2026: IA industrial, robótica humanoide, hidrogênio verde e produção para defesa — os quatro pilares que estruturaram a edição.',url:'https://www.youtube.com/watch?v=0M6qk5AGNAo'},
+  {id:14,section:'youtube',tag:'tag-youtube',tagLabel:'YouTube',title:'Todos os Robôs Humanoides da Hannover Messe 2026 (em alemão)',desc:'Levantamento completo de todos os humanoides presentes na feira, com demonstrações ao vivo. Alta relevância visual mesmo sem entender alemão — ver para crer.',url:'https://www.youtube.com/watch?v=BRhfWjhvwfA'},
+
+  // BIG TECH (6)
+  {id:15,section:'bigtech',tag:'tag-bigtech',tagLabel:'Big Tech',title:'Microsoft na Hannover Messe 2026: IA Industrial na Nuvem Azure',desc:'Deb Cupp (Presidente da Microsoft) keynote no Center Stage. Como o Azure posiciona IA industrial como infraestrutura para manufatura inteligente — não como feature, como fundação.',url:'https://www.microsoft.com/en-us/microsoft-cloud/blog/manufacturing/2026/04/16/industrial-intelligence-unlocked-microsoft-at-hannover-messe-2026/'},
+  {id:16,section:'bigtech',tag:'tag-bigtech',tagLabel:'Big Tech',title:'NVIDIA: Digital Twins e IA para Manufatura com ABB e Schneider',desc:'NVIDIA demonstra digital twins em Omniverse/OpenUSD com ABB e Schneider Electric: simular, testar e otimizar operações industriais antes de executar no mundo físico.',url:'https://blogs.nvidia.com/blog/ai-manufacturing-hannover-messe/'},
+  {id:17,section:'bigtech',tag:'tag-bigtech',tagLabel:'Big Tech',title:'NVIDIA na Hannover Messe 2026 — Página Oficial do Evento',desc:'Página oficial da NVIDIA com tecnologias de digital twin, IA para manufatura autônoma e sessões com especialistas — uma das presenças mais relevantes de toda a edição.',url:'https://www.nvidia.com/en-us/events/hannover-messe/'},
+  {id:18,section:'bigtech',tag:'tag-bigtech',tagLabel:'Big Tech',title:'Siemens: Manufatura Digital no Center Stage da HM 2026',desc:'CEO Roland Busch (Siemens) em fireside chat com Julie Sweet (Accenture): como integrar IA em organizações industriais complexas sem perder o controle operacional.',url:'https://blogs.sw.siemens.com/nx-manufacturing/siemens-digital-manufacturing-takes-center-stage-at-hannover-messe-2026/'},
+  {id:19,section:'bigtech',tag:'tag-bigtech',tagLabel:'Big Tech',title:'SAP: IA Agêntica para Manufatura e Supply Chain',desc:'SAP apresenta agentes de IA que executam tarefas no ERP (S/4HANA) via linguagem natural com SAP Joule. O fim dos formulários industriais. Rollout previsto Q2-Q3 2026.',url:'https://news.sap.com/2026/04/sap-at-hannover-messe-2026-agentic-ai-resilient-manufacturing/'},
+  {id:20,section:'bigtech',tag:'tag-bigtech',tagLabel:'Big Tech',title:'Rockwell Automation + AWS: A Fábrica Conectada à Nuvem',desc:'Rockwell demonstra digital twin dinâmico (Emulate3D) e operações de fábrica conectadas à nuvem AWS — o modelo de fábrica híbrida física-digital que se torna padrão.',url:'https://www.pandct.com/news/rockwell-automation-to-demonstrate-cloud-connected-factory-design-and-industrial-operations-with-aws-at-hannover-messe-2026'},
+
+  // IA INDUSTRIAL (4)
+  {id:21,section:'ia',tag:'tag-ia',tagLabel:'IA Industrial',title:'IA Industrial como Game-Changer Competitivo (Automation.com)',desc:'Análise completa: 3.000+ expositores, 15 empresas de robótica humanoide, IA embarcada em toda a cadeia produtiva. Um dos melhores artigos de síntese da edição 2026.',url:'https://www.automation.com/article/hannover-messe-2026-industrial-ai-competitive-game-changer'},
+  {id:22,section:'ia',tag:'tag-ia',tagLabel:'IA Industrial',title:'Automação e Digitalização: O Núcleo da HM 2026 (Automation.com)',desc:'Artigo publicado em setembro 2025 antecipando a estrutura da edição: as 3 hubs e como a digitalização redefine competitividade industrial no horizonte 2026.',url:'https://www.automation.com/en-us/articles/september-2025/automation-and-digitalization-form-the-core-of-han'},
+  {id:23,section:'ia',tag:'tag-ia',tagLabel:'IA Industrial',title:'A Era da IA Agêntica e Industrial (AI Magazine)',desc:'NVIDIA, Schneider, Microsoft e Siemens apresentam IA agêntica de nova geração. Schneider demonstra redução de 50% no tempo de engenharia — dado concreto, não promessa.',url:'https://aimagazine.com/news/hannover-messe-2026-the-age-of-agentic-industrial-ai'},
+  {id:24,section:'ia',tag:'tag-ia',tagLabel:'IA Industrial',title:'NVIDIA e Parceiros: Manufatura com IA no Dia 1 da Feira',desc:'Cobertura do primeiro dia (20/04): demonstrações de digital twins e robótica autônoma da NVIDIA e parceiros — o momento em que a IA industrial virou realidade tangível.',url:'https://roboticsandautomationnews.com/2026/04/20/nvidia-and-partners-showcase-ai-driven-manufacturing-systems-at-hannover-messe-2026/100766/'},
+
+  // ROBÓTICA & HUMANOIDES (6)
+  {id:25,section:'robotica',tag:'tag-robotica',tagLabel:'Robótica',title:'Robôs Humanoides: Prontos para a Indústria? (IndustryWeek — Podcast)',desc:'Dennis Scimeca (editor sênior IndustryWeek) cobre ao vivo os humanoides e faz a pergunta certa: estão realmente prontos para trabalhar na fábrica? Podcast de chão de feira.',url:'https://www.industryweek.com/technology-and-iiot/podcast/55374503/humanoid-robots-at-hannover-messe'},
+  {id:26,section:'robotica',tag:'tag-robotica',tagLabel:'Robótica',title:'HM Acredita nos Humanoides — Mas Talvez Seja Cedo (Machine Design)',desc:'Análise crítica com questionamentos honestos: dominância dos humanoides na feira versus diferenciais reais entre os sistemas. Leitura equilibrada e indispensável.',url:'https://www.machinedesign.com/markets/robotics/video/55374855/siemens-are-humanoid-robots-ready-for-industry-hannover-messe-thinks-so-maybe'},
+  {id:27,section:'robotica',tag:'tag-robotica',tagLabel:'Robótica',title:'Do Laboratório para o Chão de Fábrica (DirectIndustry — Pós-Feira)',desc:'Agile Robots, XPeng, Schunk e Schaeffler: humanoides que migraram de conceito futurista para ferramentas prontas para produção. Reportagem de 28/04/2026.',url:'https://emag.directindustry.com/2026/04/28/humanoid-robots-move-from-the-lab-to-the-factory-floor-at-hannover-messe-2026/'},
+  {id:28,section:'robotica',tag:'tag-robotica',tagLabel:'Robótica',title:'Humanoides com Cérebros de IA: O Que Mudou (Tech Briefs)',desc:'Análise técnica: sensores táteis avançados e "cérebros" de IA estão acelerando — de verdade — a adoção de humanoides em linhas de produção industrial.',url:'https://www.techbriefs.com/component/content/article/55122-humanoid-robots-with-ai-brains-at-hannover-messe-2026'},
+  {id:29,section:'robotica',tag:'tag-robotica',tagLabel:'Robótica',title:'Conferência HM: Acelerando IA Física na Manufatura Autônoma',desc:'Sessão oficial com Agile Robots, NEURA Robotics e parceiros: o roadmap de implementação de IA física e robótica autônoma em plantas industriais reais.',url:'https://www.hannovermesse.de/event/accelerating-physical-ai-and-robotics-for-autonomous-manufacturing/ses/99984'},
+  {id:30,section:'robotica',tag:'tag-robotica',tagLabel:'Robótica',title:'NEURA Robotics: IA Física para Suprir o Déficit de Mão de Obra Industrial',desc:'CEO David Reger apresenta o humanoide 4NE1 a partir de €60.000 — projetado para preencher déficit de 101 milhões de trabalhadores até 2030 em China, Europa e Japão.',url:'https://www.iiot-world.com/artificial-intelligence-ml/robotics/neura-robotics-physical-ai-manufacturing/'},
+
+  // ENERGIA & HIDROGÊNIO (3)
+  {id:31,section:'energia',tag:'tag-energia',tagLabel:'Energia & H₂',title:'Press Preview: Os Três Pilares da HM 2026 (DirectIndustry)',desc:'Fevereiro 2026: os três eixos da edição revelados — IA Industrial + Robótica, Energia e Hidrogênio Verde, Produção para Defesa. Leitura essencial para entender a estrutura do evento.',url:'https://emag.directindustry.com/2026/02/26/industrial-ai-humanoid-robots-hydrogen-energy-defense-manufacturing-hannover-messe-2026-press-preview/'},
+  {id:32,section:'energia',tag:'tag-energia',tagLabel:'Energia & H₂',title:'Hidrogênio em Hannover 2026: Do Componente ao Sistema Viável',desc:'300+ expositores de 25 países no hall de hidrogênio. Brasil em destaque: com 90% de matriz renovável, o país tem a maior vantagem competitiva global em hidrogênio verde.',url:'https://emag.directindustry.com/2026/04/29/hydrogen-at-hannover-messe-2026-from-breakthrough-components-to-bankable-systems-with-brazil-in-the-spotlight/'},
+  {id:33,section:'energia',tag:'tag-brasil',tagLabel:'Brasil · H₂ Verde',title:'CNI sela Acordo de Hidrogênio Verde Brasil-Alemanha na Hannover Messe',desc:'Confederação Nacional da Indústria assina acordo de H2 verde com parceiros alemães durante a feira (21/04/2026) — oportunidade concreta de P&D para o setor industrial brasileiro.',url:'https://fuelcellsworks.com/2026/04/21/news/brazil-s-industrial-confederation-seals-green-hydrogen-deal-at-hannover-messe'},
+
+  // BRASIL NA FEIRA — FONTES ADICIONAIS (6)
+  {id:41,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Lula chega à Alemanha para assinar parcerias de inovação (Agência Brasil)',desc:'Cobertura da chegada de Lula à Alemanha, agenda de reuniões com o chanceler Merz e expectativas para os acordos bilaterais em digitalização e transição energética.',url:'https://agenciabrasil.ebc.com.br/internacional/noticia/2026-04/lula-chega-alemanha-para-assinar-parcerias-comerciais-e-de-inovacao'},
+  {id:42,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Brasil anuncia R$ 11,7 bilhões em hidrogênio de baixo carbono (CIMM)',desc:'Projeto Morro Pintado (Areia Branca/RN): €2 bilhões, 1.400 MW, 80 mil toneladas/ano de H₂ — o maior projeto de hidrogênio verde do Brasil anunciado na Hannover.',url:'https://www.cimm.com.br/portal/noticia/exibir_noticia/27276-hannover-messe-2026-brasil-anuncia-117-bilhoes-investimentos-hidrogenio-baixo-carbono'},
+  {id:43,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'WEG, Vale, Embraer e Be8 em destaque na abertura com Lula (Jornal do Comércio)',desc:'O Jornal do Comércio fez cobertura especial: as 4 empresas brasileiras visitadas por Lula na cerimônia de abertura — símbolos da indústria brasileira no mundo.',url:'https://www.jornaldocomercio.com/especiais/hannover-messe/2026/04/1245513-weg-vale-embraer-e-be8-ganham-destaque-na-abertura-da-feira-de-hannover.html'},
+  {id:44,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'"Brasil saiu de Hannover com outro tamanho" — presidente da ApexBrasil',desc:'Entrevista pós-feira com a presidência da ApexBrasil: 5.000 visitas ao Pavilhão Brasil, 200 reuniões de negócios, acordos firmados e projeção de crescimento de exportações.',url:'https://www.folhape.com.br/economia/brasil-saiu-de-hanover-com-outro-tamanho-diz-presidente-da-apexbrasil/485670/'},
+  {id:45,section:'brasil',tag:'tag-brasil',tagLabel:'Brasil na Feira',title:'Acordo Mercosul-UE: os 10 pontos estratégicos para a indústria brasileira (KPMG)',desc:'A KPMG analisa os 10 pontos-chave do acordo Mercosul-UE discutidos na Hannover Messe — guia prático para empresas brasileiras que querem exportar para a Europa.',url:'https://monitormercantil.com.br/kpmg-na-hannover-messe-2026-acordo-ue-mercosul-ganha-10-pontos-chave/'},
+  {id:46,section:'brasil',tag:'tag-youtube',tagLabel:'YouTube · Brasil',title:'YouTube: Lula participa da abertura da Hannover Messe 2026',desc:'Registro em vídeo da participação do presidente Lula na abertura oficial ao lado do chanceler Friedrich Merz — momento histórico da participação brasileira.',url:'https://www.youtube.com/watch?v=ZoZOq2OUrvQ'},
+
+  // SEBRAE & INSTITUIÇÕES BRASILEIRAS (6)
+  {id:47,section:'sebrae',tag:'tag-sebrae',tagLabel:'Sebrae',title:'Sebrae leva 190 MPE e startups à maior feira industrial do mundo',desc:'Com apoio do Sebrae, 190 micro e pequenas empresas e startups ganham vitrine global na Hannover Messe. Soluções de IA, sustentabilidade e manufatura avançada.',url:'https://agenciasebrae.com.br/inovacao-e-tecnologia/com-apoio-do-sebrae-startups-e-mpe-brasileiras-ganham-vitrine-na-maior-feira-industrial-do-mundo/'},
+  {id:48,section:'sebrae',tag:'tag-sebrae',tagLabel:'Sebrae',title:'Sebrae lidera debate: oportunidades para MPE com acordo Mercosul-UE',desc:'O presidente do Sebrae Nacional conduz painel sobre as oportunidades concretas para pequenas empresas com o acordo Mercosul-UE, em vigor desde 1º de maio de 2026.',url:'https://agenciasebrae.com.br/economia-e-politica/sebrae-lidera-debate-sobre-oportunidades-para-mpe-com-acordo-uniao-europeia-mercosul/'},
+  {id:49,section:'sebrae',tag:'tag-sebrae',tagLabel:'Sebrae',title:'O futuro da indústria tem sotaque brasileiro na Hannover Messe',desc:'Reportagem de fundo sobre o impacto das empresas brasileiras na feira — com casos de deeptech como Metenergy Solutions (IA para energia renovável).',url:'https://agenciasebrae.com.br/inovacao-e-tecnologia/o-futuro-da-industria-tem-sotaque-brasileiro-na-hannover-messe/'},
+  {id:50,section:'sebrae',tag:'tag-sebrae',tagLabel:'ApexBrasil',title:'ApexBrasil — Pavilhão Brasil na Hannover Messe 2026',desc:'Página central da ApexBrasil com estrutura dos 6 pavilhões temáticos, expositores selecionados, programação e resultados da participação brasileira como País Parceiro Oficial.',url:'https://apexbrasil.com.br/hannovermesse2026'},
+  {id:51,section:'sebrae',tag:'tag-sebrae',tagLabel:'ABIMAQ',title:'ABIMAQ: 36 empresas de máquinas e equipamentos no Pavilhão Brasil',desc:'ABIMAQ mobiliza 36 associadas como expositoras, com dois espaços próprios (Hall 12 e Hall 27) — demonstrador tecnológico IPDMAQ em destaque.',url:'https://informaq.abimaq.org.br/brasil-assume-papel-de-destaque-na-hannover-messe-2026-e-projeta-forca-da-industria-de-maquinas-e-equipamentos/'},
+  {id:52,section:'sebrae',tag:'tag-brasil',tagLabel:'Pequenos Negócios',title:'Pequenos negócios brasileiros conquistam avanços concretos em Hannover',desc:'Resultados concretos de MPE no Pavilhão Brasil: parcerias fechadas, rodadas de negócios realizadas e projeção de expansão para o mercado europeu via Mercosul-UE.',url:'https://www.cravou.com.br/noticias/3945-pequenos-negocios-conquistam-avancos-concretos-na-hannover-messe'},
+
+  // PORTAIS INDUSTRIAIS BRASILEIROS (5)
+  {id:53,section:'portais-br',tag:'tag-portal',tagLabel:'Portal Industrial BR',title:'Embraer e Fraunhofer IPK: MoU para cooperação em Indústria 4.0',desc:'Formalização do Memorando de Entendimento entre Embraer e Instituto Fraunhofer IPK para cooperação em Indústria 4.0 e manufatura orientada a dados. 29/04/2026.',url:'https://www.aereo.jor.br/2026/04/29/embraer-e-fraunhofer-ipk-assinam-mou-para-possivel-colaboracao-relacionada-a-industria-4-0/'},
+  {id:54,section:'portais-br',tag:'tag-portal',tagLabel:'Portal Industrial BR',title:'WEG reforça presença global na Hannover: energia, eletromobilidade e IA',desc:'Stand da WEG no Hall 12 com soluções de eficiência energética, energia renovável, eletromobilidade e monitoramento inteligente — empresa brasileira no centro da transformação.',url:'https://engenharia-brasil.com/news/109199-weg-refor%C3%A7a-presen%C3%A7a-global-na-hannover-messe-2026'},
+  {id:55,section:'portais-br',tag:'tag-portal',tagLabel:'Portal Industrial BR',title:'IA nas atividades industriais veio para ficar — análise brasileira da HM 2026',desc:'Análise de Edmundo Barbosa sobre o impacto da IA industrial apresentada na Hannover, com perspectivas para o setor produtivo brasileiro pós-feira.',url:'https://www.udop.com.br/noticia/2026/4/23/hannover-messe-inteligencia-artificial-nas-atividades-industriais-veio-para-ficar-por-edmundo-barbosa'},
+  {id:56,section:'portais-br',tag:'tag-portal',tagLabel:'Portal Industrial BR',title:'FIEMG: SENAI de Minas fecha parceria com Instituto Fraunhofer em Hannover',desc:'SENAI-MG e FIEMG participam da missão e estabelecem parceria com o Institut Fraunhofer — referência mundial em pesquisa aplicada para a indústria.',url:'https://www.fiemg.com.br/noticias/senai-participa-da-hannover-messe-2026-e-reforca-protagonismo-do-brasil-na-industria-global/'},
+  {id:57,section:'portais-br',tag:'tag-portal',tagLabel:'Portal Industrial BR',title:'Nova Política Industrial Brasileira chega à Hannover como potência tecnológica',desc:'Contextualiza a participação dentro da Nova Indústria Brasil: crescimento de 3,1% da produção industrial e 91% de matriz elétrica renovável como diferencial competitivo.',url:'https://comexdobrasil.com/brasil-leva-a-hannover-messe-2026-sua-nova-politica-industrial-e-se-projeta-como-potencia-tecnologica/'},
+
+  // ANÁLISE ESTRATÉGICA (3)
+  {id:38,section:'analise',tag:'tag-analise',tagLabel:'Análise Estratégica',title:'Roland Berger: A Próxima Fase da Inteligência Industrial',desc:'Análise da convergência de automação avançada, IA e integração digital. Contextualiza geopolítica, escassez de mão de obra e pressão por resiliência de cadeias produtivas.',url:'https://www.rolandberger.com/en/Insights/Publications/Hannover-Messe-2026-Entering-the-next-phase-of-industrial-intelligence.html'},
+  {id:39,section:'analise',tag:'tag-analise',tagLabel:'Análise Estratégica',title:'IDC: 7 Insights sobre IA Industrial e o Futuro da Fábrica',desc:'Alerta da IDC: o risco não é adotar IA devagar — é escalar antes da organização estar pronta. 7 insights críticos sobre contexto, governança e prontidão organizacional.',url:'https://www.idc.com/resource-center/blog/hannover-messe-2026-industrial-ai-manufacturing/'},
+  {id:40,section:'analise',tag:'tag-analise',tagLabel:'Análise Estratégica',title:'IIoT World: Cobertura de Chão de Feira com Líderes Globais',desc:'Entrevistas ao vivo com Siemens, ABB, NEURA Robotics, Cybus, HighByte durante a feira. Confirma 130.000 participantes, 4.000 expositores, 150+ países e 1.600 palestrantes.',url:'https://www.iiot-world.com/industrial-iot/hannover-messe-2026-iiot-world-coverage/'},
+
+];
+
+const TOOLS = [
+  {name:'ChatGPT',fn:'IA generativa — relatórios, e-mails, propostas técnicas',cost:'Gratuito',costType:'free',url:'https://chatgpt.com',icon:'🤖'},
+  {name:'Claude (Anthropic)',fn:'Análise estratégica e síntese de documentos longos',cost:'Gratuito',costType:'free',url:'https://claude.ai',icon:'✨'},
+  {name:'Perplexity AI',fn:'Pesquisa técnica com fontes verificadas em tempo real',cost:'Gratuito',costType:'free',url:'https://perplexity.ai',icon:'🔍'},
+  {name:'NotebookLM (Google)',fn:'Resumir documentos técnicos e criar podcasts de áudio',cost:'Gratuito',costType:'free',url:'https://notebooklm.google.com',icon:'📓'},
+  {name:'Canva',fn:'Apresentações, relatórios visuais e materiais',cost:'Grátis / R$ 14,99/mês',costType:'free',url:'https://canva.com',icon:'🎨'},
+  {name:'LinkedIn Premium',fn:'Prospecção de parceiros internacionais e mercados',cost:'~R$ 99/mês',costType:'paid',url:'https://linkedin.com/premium',icon:'💼'},
+  {name:'Portal EMBRAPII',fn:'Busca de unidades EMBRAPII e editais de PD&I',cost:'Gratuito',costType:'free',url:'https://embrapii.org.br',icon:'🔬'},
+  {name:'Datasebrae',fn:'Dados de mercado e inteligência setorial brasileira',cost:'Gratuito',costType:'free',url:'https://datasebrae.com.br',icon:'📊'},
+  {name:'ApexBrasil',fn:'Internacionalização, missões comerciais e conexões globais',cost:'Gratuito para exportadores',costType:'free',url:'https://apexbrasil.com.br',icon:'🌍'},
+  {name:'SEBRAE Mais',fn:'Consultoria, capacitação e apoio à inovação',cost:'Gratuito',costType:'free',url:'https://sebrae.com.br',icon:'🤝'},
+];
+
+let currentSection = 'all';
+let searchTerm = '';
+
+function showSection(sec, el) {
+  currentSection = sec;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function filterAll() {
+  searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  render();
+}
+
+function arrowSVG() {
+  return `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+
+function renderSources(sources) {
+  return sources.map(s => `
+    <div class="card${s.featured?' featured':''}" data-section="${s.section}" data-search="${(s.title+' '+s.desc).toLowerCase()}">
+      <span class="card-tag ${s.tag}">${s.tagLabel}</span>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+      <a class="card-link" href="${s.url}" target="_blank" rel="noopener">Acessar ${arrowSVG()}</a>
+    </div>`).join('');
+}
+
+function render() {
+  const container = document.getElementById('cards-container');
+  const noResults = document.getElementById('no-results');
+
+  if (currentSection === 'ferramentas') {
+    const filtered = searchTerm
+      ? TOOLS.filter(t => (t.name+t.fn).toLowerCase().includes(searchTerm))
+      : TOOLS;
+    if (filtered.length === 0) {
+      container.innerHTML = '';
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+      container.innerHTML = `<div class="tools-grid">` + filtered.map(t => `
+        <div class="tool-card">
+          <div class="tool-icon">${t.icon}</div>
+          <div class="tool-info">
+            <h3>${t.name}</h3>
+            <p>${t.fn}</p>
+            <span class="tool-cost ${t.costType==='free'?'free':''}">${t.cost}</span>
+            <br><a class="tool-link" href="${t.url}" target="_blank" rel="noopener">Acessar ${arrowSVG()}</a>
+          </div>
+        </div>`).join('') + `</div>`;
+    }
+    return;
+  }
+
+  let sources = SOURCES;
+  if (currentSection !== 'all') sources = sources.filter(s => s.section === currentSection);
+  if (searchTerm) sources = sources.filter(s => (s.title+' '+s.desc+' '+s.tagLabel).toLowerCase().includes(searchTerm));
+  sources = [...sources.filter(s => s.featured), ...sources.filter(s => !s.featured)];
+
+  if (sources.length === 0) {
+    container.innerHTML = '';
+    noResults.style.display = 'block';
+  } else {
+    noResults.style.display = 'none';
+    container.innerHTML = `<div class="cards-grid">${renderSources(sources)}</div>`;
+  }
+}
+
+render();
+</script>
+</body>
+</html>
